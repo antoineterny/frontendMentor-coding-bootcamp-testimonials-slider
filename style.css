@@ -1,0 +1,189 @@
+:root {
+  --dark-blue: hsl(240, 38%, 20%);
+  --grayish-blue: hsl(240, 18%, 77%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: lightblue 1px solid; */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+#container {
+  /* background: var(--dark-blue); */
+  max-width: 1440px;
+  height: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  background: url(./images/pattern-curve.svg) no-repeat bottom left;
+  background-size: 50%;
+}
+
+/**********************
+Text Div
+***********************/
+#text {
+  /* outline: lightgreen 1px solid; */
+  flex-basis: 670px;
+  color: var(--dark-blue);
+  
+}
+#text-content {
+  width: 630px;
+  transform: translate(165px, 287px);
+}
+#text-content::before {
+  content: "";
+  width: 120px;
+  height: 100px;
+  left: 91px;
+  top: -74px;
+  position: absolute;
+  z-index: -1;
+  background: url(./images/pattern-quotes.svg) no-repeat;
+}
+#text-content p {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+#person {
+  display: flex;
+  font-size: 20px;
+}
+#name {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+#title {
+  color: var(--grayish-blue);
+}
+
+/**********************
+Illustration Div
+***********************/
+#illustration {
+  width: 770px;
+  background: url(./images/pattern-bg.svg) no-repeat left center;
+  padding: 135px 65px;
+}
+#photo img {
+  border-radius: 5px;
+  box-shadow: 5px 10px 10px hsla(240, 38%, 20%, 15%);
+}
+#boutons {
+  width: 112px;
+  height: 56px;
+  transform: translate(50px, -30px);
+}
+.bouton {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  box-shadow: 5px 10px 10px hsla(240, 38%, 20%, 15%);
+}
+.bouton:hover {
+  transform: translate3d(1px, 1px, 1px);
+  cursor: pointer;
+}
+#leftBtn {
+  border-radius: 50% 0 0 50%;
+  background: url(./images/icon-prev.svg) no-repeat center white;
+}
+#rightBtn {
+  border-radius: 0 50% 50% 0;
+  background: url(./images/icon-next.svg) no-repeat center white;
+}
+
+/*********************
+Version mobile
+*********************/
+@media (max-width: 1400px) {
+  body {
+    display: block;
+  }
+  #container {
+    width: 375px;
+    height: unset;
+    flex-direction: column-reverse;
+    padding: 24px;
+    text-align: center;
+    background-size: 80%;
+  }
+  #illustration {
+    width: 100%;
+    padding: 24px;
+    background-image: url(../images/pattern-bg.svg);
+    background-size: 100%;
+    background-position-x: 50%;
+    background-position-y: 0;
+  }
+  #photo {
+    margin: 7px auto;
+    width: 255px;
+  }
+  #photo img {
+    display: block;
+    width: 100%;
+  }
+  #boutons {
+    width: 80px;
+    height: 40px;
+    transform: translate(0, -27px);
+    margin: auto;
+  }
+  .bouton {
+    width: 40px;
+    height: 40px;
+    
+  }
+  #leftBtn, #rightBtn {
+    background-size: 10px 13px;
+  }
+
+  #text {
+    font-size: 16px;
+    flex-basis: unset;
+    padding-bottom: 76px;
+    background-size: 80%;
+  }
+  #text-content {
+    width: 100%;
+    transform: none;
+    margin: auto;
+    position: relative;
+  }
+  #text-content p {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  #text-content::before {
+    width: 50px;
+    height: 60px;
+    left: 115px;
+    top: -19px;
+    z-index: -1;
+    background-image: url(./images/pattern-quotes.svg);
+    background-size: contain;
+  }
+  #person {
+    flex-direction: column;
+    font-size: 16px;
+    
+  }
+  #name {
+    margin-right: 0;
+    margin-bottom: .25em;
+  }
+}
